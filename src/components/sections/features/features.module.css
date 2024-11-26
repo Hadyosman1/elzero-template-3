@@ -1,0 +1,128 @@
+.features {
+  margin-top: 60px;
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: #fff;
+  box-shadow: 0 0 10px #eee;
+  border: 1px solid #ddd;
+  overflow: hidden;
+  max-width: 400px;
+  min-width: 290px;
+  flex: 1 1 31%;
+}
+
+.card div:has(img) {
+  position: relative;
+}
+
+.img_overlay {
+  position: absolute;
+  opacity: 0.5;
+  inset: 0;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.card div:has(img)::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 55%;
+  right: -1px;
+  bottom: -1px;
+  z-index: 2;
+  clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+  background-color: #fff;
+  transition: 200ms;
+  border-right: 1px solid #ddd;
+}
+
+.card:hover div:has(img)::after {
+  clip-path: polygon(0% 0, 0% 100%, 100% 100%);
+  right: auto;
+  left: -1px;
+  border-left: 1px solid #ddd;
+}
+
+.card img {
+  max-width: 100%;
+  height: 360px;
+  object-fit: cover;
+}
+
+.card div:has(h3) {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.card h3 {
+  width: fit-content;
+  margin-inline: auto;
+  font-weight: bold;
+  margin-block: 30px;
+  font-size: 36px;
+  padding: 10px 0;
+  text-transform: capitalize;
+  position: relative;
+}
+
+.card h3 span {
+  position: absolute;
+  width: 80%;
+  height: 4px;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+}
+
+.card p {
+  color: #666;
+  line-height: 1.7;
+  font-size: 20px;
+  margin-bottom: 40px;
+  text-wrap: balance;
+}
+
+.card div:has(> button) {
+  width: fit-content;
+  margin: auto;
+  margin-top: 60px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.card button {
+  position: relative;
+  background: transparent;
+  font-weight: 700;
+  font-size: 22px;
+  padding: 10px 25px;
+  border-radius: 6px;
+  cursor: pointer;
+  z-index: 2;
+  transition: var(--main-transition);
+}
+
+.card div:has(> button) span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: -100%;
+  top: 0;
+  transition: var(--main-transition);
+}
+
+.card:hover button {
+  color: #fff !important;
+}
+
+.card:hover div:has(> button) span {
+  left: 0;
+}

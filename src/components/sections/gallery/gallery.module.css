@@ -1,0 +1,63 @@
+.section {
+  background-color: var(--section-bg);
+  position: relative;
+}
+
+.section::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  background-image: linear-gradient(135deg, white 25%, transparent 25%),
+    linear-gradient(225deg, white 25%, transparent 25%);
+  background-size: 30px 30px;
+}
+
+.gallery {
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 40px;
+}
+
+.pic {
+  border: 15px solid #fff;
+  box-shadow: 0 0 10px #b9b9b9;
+  overflow: hidden;
+  position: relative;
+}
+
+.pic::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  scale: 0;
+  background: #ffffff31;
+}
+
+.pic:hover::after {
+  transition: 160ms;
+  scale: 1;
+  width: 100%;
+  height: 100%;
+  filter: brightness(120%);
+}
+
+.pic img {
+  max-width: 100%;
+  height: 325px;
+  aspect-ratio: 1;
+  object-fit: cover;
+  transition: var(--main-transition);
+}
+
+.pic:hover img {
+  scale: 1.2;
+  transform: rotate(5deg);
+}
