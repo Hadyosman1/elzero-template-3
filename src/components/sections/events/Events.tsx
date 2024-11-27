@@ -41,7 +41,7 @@ const Events = () => {
                   <span>Minutes</span>
                 </div>
                 <div>
-                  <p>333</p>
+                  <p>30</p>
                   <span>seconds</span>
                 </div>
               </div>

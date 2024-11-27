@@ -23,7 +23,7 @@ const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div
-        className={`${styles.footer_container} container main-section-padding`}
+        className={`${styles.footer_boxes_wrapper} container main-section-padding`}
       >
         <div className={styles.one}>
           <h2>Elzero</h2>
