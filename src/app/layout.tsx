@@ -6,8 +6,10 @@ import "./globals.css";
 
 import Header from "@/components/layout/header/Header";
 import Footer from "@/components/layout/footer/Footer";
+import ScrollToTopBtn from "@/components/ScrollToTopBtn";
 
 const cairo = Cairo({
+  subsets: ["latin"],
   variable: "--font-cairo",
 });
 
@@ -27,6 +29,7 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
+        <ScrollToTopBtn />
       </body>
     </html>
   );

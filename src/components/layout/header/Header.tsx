@@ -77,7 +77,7 @@ const Header = () => {
                     </a>
                   </li>
                   <li>
-                    <a href="#skills">
+                    <a href="#how-it-works">
                       <HiOutlineClipboardDocumentList />
                       How It Works
                     </a>
@@ -92,13 +92,13 @@ const Header = () => {
                     </a>
                   </li>
                   <li>
-                    <a href="#">
+                    <a href="#pricing">
                       <LiaServerSolid />
                       Pricing Plans
                     </a>
                   </li>
                   <li>
-                    <a href="#services">
+                    <a href="#videos">
                       <IoPlayCircleOutline />
                       Top Videos
                     </a>

@@ -1,0 +1,156 @@
+.footer {
+  background: #191919;
+  color: #fff;
+}
+
+.footer_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250, 1fr));
+  gap: 35px;
+}
+
+.one h2 {
+  font-size: 40px;
+  font-weight: bold;
+  margin-block: 0 20px;
+}
+
+.socials {
+  display: flex;
+  gap: 12px;
+}
+
+.socials li {
+  padding: 10px;
+  display: grid;
+  place-content: center;
+  background-color: #444;
+  font-size: 25px;
+  cursor: pointer;
+  transition: var(--main-transition);
+}
+
+.socials li svg {
+  color: #ccc;
+}
+
+.socials li.facebook:hover {
+  background-color: #0363a8;
+}
+.socials li.twitter:hover {
+  background-color: #208fdeef;
+}
+.socials li.youtube:hover {
+  background-color: #a82103;
+}
+
+.one p {
+  max-width: 240px;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+.two li {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 18px 0;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: var(--main-transition);
+}
+
+.two li:hover {
+  padding-left: 10px;
+}
+
+.two li:not(:last-child) {
+  border-bottom: 1px solid #dddddd9d;
+}
+
+.two li svg {
+  color: var(--main-color);
+}
+
+.three {
+  color: #ccc;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.three li {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  line-height: 1.7;
+}
+
+.three li svg {
+  color: var(--main-color);
+  font-size: 26px;
+}
+
+.three li:last-child div {
+  display: flex;
+  flex-direction: column;
+}
+
+.four {
+  display: grid;
+  grid-template-columns: repeat(3, 70px);
+  grid-template-rows: repeat(2, 70px);
+  gap: 15px;
+}
+
+.four li {
+  margin: 0;
+}
+
+.four li img {
+  outline: 4px solid #fff;
+  max-width: 100%;
+}
+
+.made_with {
+  text-align: center;
+  padding: 20px;
+  color: #fff;
+  border-top: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.made_with span {
+  margin-top: 4px;
+  margin-inline: 4px;
+}
+
+@media (max-width: 900px) {
+  .one {
+    text-align: center;
+  }
+
+  .one .socials {
+    justify-content: center;
+  }
+
+  .one p {
+    margin-inline: auto;
+  }
+
+  .three
+   {
+    align-items: center;
+  }
+
+  .three li {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .four {
+    justify-content: center;
+  }
+}

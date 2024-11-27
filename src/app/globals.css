@@ -16,6 +16,7 @@
 
 html {
   scroll-behavior: smooth;
+  caret-color: var(--main-color-alt);
 }
 
 .container {
@@ -71,6 +72,32 @@ a {
 
 .filled-rating-star {
   color: #ffc107;
+}
+
+.scroll-to-top-btn {
+  position: fixed;
+  padding: 6px;
+  font-size: 18px;
+  box-shadow: 0 0 3px #00000040;
+  background-color: var(--main-color);
+  color: #eee;
+  bottom: 30px;
+  right: 30px;
+  display: grid;
+  place-content: center;
+  border: none;
+  outline: none;
+  opacity: 0;
+  visibility: hidden;
+  translate: 150px 0;
+  cursor: pointer;
+  transition: var(--main-transition);
+}
+
+.scroll-to-top-btn.show {
+  opacity: 1;
+  visibility: visible;
+  translate: 0;
 }
 /* Global Rules */
 

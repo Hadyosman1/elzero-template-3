@@ -1,0 +1,130 @@
+.section {
+  display: flex;
+}
+
+.left,
+.right {
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-inline: 15px;
+  text-align: center;
+}
+
+.left {
+  position: relative;
+  color: #fff;
+  background: url("./../../../../public/imgs/discount-background1.jpg");
+  animation: left-background 10s ease infinite;
+  z-index: 1;
+}
+
+.left::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgb(23 135 224 / 95%);
+  z-index: -1;
+}
+
+@keyframes left-background {
+  0%,
+  100% {
+    background: url("./../../../../public/imgs/discount-background1.jpg");
+  }
+  50% {
+    background: url("./../../../../public/imgs/discount-background2.jpg");
+  }
+}
+
+.left h3 {
+  font-weight: bold;
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.left p {
+  line-height: 1.7;
+  max-width: 500px;
+  font-size: 18px;
+}
+
+.left img {
+  max-width: 100%;
+}
+
+.right {
+  background: #fff;
+}
+
+.right form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 350px;
+}
+
+.right h3 {
+  font-size: 40px;
+}
+
+.right form input,
+.right form textarea {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #ccc;
+  padding: 15px;
+  transition: var(--main-transition);
+}
+
+.right form input:focus,
+.right form textarea:focus {
+  border-bottom-color: var(--main-color);
+  &::placeholder {
+    opacity: 0;
+  }
+}
+
+.right form input::placeholder,
+.right form textarea::placeholder {
+  font-size: 18px;
+  transition: var(--main-transition);
+}
+
+.right form textarea {
+  min-height: 100px;
+  max-height: 200px;
+  max-width: 100%;
+  resize: vertical;
+}
+
+.right form button {
+  margin-top: 20px;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 15px;
+  background-color: var(--main-color);
+  color: #fff;
+  outline: none;
+  cursor: pointer;
+  transition: var(--main-transition);
+}
+
+.right form button:hover {
+  background-color: var(--main-color-alt);
+}
+
+@media (max-width: 800px) {
+  .section {
+    flex-direction: column;
+  }
+
+  .left h3,
+  .right h3 {
+    font-size: 28px;
+  }
+}

@@ -14,7 +14,7 @@ const Gallery = () => {
   return (
     <section id="gallery" className={styles.section}>
       <div className="container main-section-padding">
-        <h1 className="section-main-title">Gallery</h1>
+        <h2 className="section-main-title">Gallery</h2>
         <ul className={styles.gallery}>
           {gallery.map((pic, idx) => (
             <li key={idx} className={styles.pic}>

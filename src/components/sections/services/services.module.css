@@ -1,0 +1,123 @@
+.section {
+  background-color: var(--section-bg);
+  position: relative;
+}
+
+.section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  background-image: linear-gradient(135deg, #fff 25%, #0000 25%),
+    linear-gradient(225deg, #fff 25%, #0000 25%);
+  background-size: 30px 30px;
+}
+
+.service_list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 35px;
+  margin-top: 80px;
+}
+
+.service_box {
+  background: #fff;
+  box-shadow: 0 0 10px #ddd;
+  transition: var(--main-transition);
+  position: relative;
+}
+
+.service_box::before {
+  content: "";
+  position: absolute;
+  background-color: var(--main-color);
+  height: 2px;
+  width: 0;
+  left: 50%;
+  top: -2px;
+  transition: var(--main-transition);
+}
+
+.service_box:hover::before {
+  width: 100%;
+  left: 0;
+}
+
+.service_box:hover {
+  transform: translateY(-10px);
+}
+
+.service_box div:has(svg) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-block: 35px;
+  gap: 16px;
+}
+
+.service_box div:has(svg) svg {
+  font-size: 70px;
+  color: #d5d5d5;
+}
+
+.service_box div:has(svg) h3 {
+  color: var(--main-color-alt);
+  font-weight: bold;
+  font-size: 28px;
+  margin-block: 0;
+}
+
+.service_box div:has(a) {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+
+}
+
+.service_box div:has(a) p {
+  position: relative;
+  padding: 8px 20px;
+  font-size: 30px;
+  font-weight: 900;
+  margin: 0;
+  color: #fff;
+  z-index: 3;
+}
+
+.service_box div:has(a)::before,
+.service_box div:has(a)::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  left: 0;
+  bottom: 0;
+  transform: skewX(-30deg) translate(-20px, 1px);
+}
+
+.service_box div:has(a)::before {
+  z-index: 2;
+  width: 100px;
+  background-color: var(--main-color);
+}
+
+.service_box div:has(a)::after {
+  width: 140px;
+  background-color: #d5d5d5;
+}
+
+.service_box div:has(a) a {
+  color: var(--main-color);
+  padding: 15px;
+  font-size: 18px;
+  margin: 0;
+  align-self: flex-end;
+}
+
+.service_box div:has(a) a:hover {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-color: currentColor;
+}
