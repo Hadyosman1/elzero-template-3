@@ -19,17 +19,12 @@ const Skills = () => {
 
   const handleFillProgress = () => {
     const observer = new IntersectionObserver(
-      (entries, observer) => {
+      (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsInterSecting(true);
-            if (skillsRef.current) observer.unobserve(skillsRef.current);
-          }
+          setIsInterSecting(entry.isIntersecting);
         });
       },
-      {
-        threshold: 0.3,
-      }
+      { threshold: 0.3 }
     );
 
     if (skillsRef.current) observer.observe(skillsRef.current);
